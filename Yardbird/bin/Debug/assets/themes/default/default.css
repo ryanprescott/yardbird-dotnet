@@ -1,0 +1,98 @@
+body {
+background-color: #fff;
+font-family: "Segoe UI Emoji", "Segoe UI", Arial, sans-serif;
+}
+
+span.messageblock {
+	display: inline-block;
+	min-height: 12pt;
+	font-size: 9pt;
+	max-width: 75%;
+	color: #222;
+	padding: 8px;
+	border-radius: 9px;
+	background-size: 1px 100%;
+	background-repeat: x;
+	background-color: #ddd;
+}
+
+p.chatElement {
+	word-break: break-word;
+	word-wrap: break-word;
+	display:block;
+	margin: 8px 4px 0px 4px;
+}
+
+
+p.sent span.messageblock {
+		background-color: #1975ff !important;
+		color: #fff;
+}
+
+p.sent span.messageblock a{
+		background-color: #1975ff !important;
+		color: #fff;
+}
+
+p.sent span.messageblock a:hover{
+		background-color: #1975ff !important;
+		color: #eef;
+}
+
+p.sent span.messageblock a:visited{
+		background-color: #1975ff !important;
+		color: #aaf;
+}
+
+
+p.sent {
+		text-align: right;
+}
+
+
+p.passive span.messageblock{
+	font-style: oblique;
+	font-weight: bold;
+	color: #555;
+}
+
+p.information span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	background-color: #498c4b !important;
+	color: #fff;
+}
+
+p.critical span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	background-color: #ff4f4f !important;
+	color: #fff;
+}
+
+p.warning span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	background-color: #ffca1c;
+}
+
+span.handle {
+	font-weight: bold;
+	color: maroon;
+}
+
+p.sent span.handle {
+	font-weight: bold;
+	color: #d1eeff;
+}
+
+a.disabledlink {
+	color: gray;
+ 	text-decoration: line-through underline;
+}
+
+a#bottom{
+	height: 10px;
+	max-width: 100%;
+}
+

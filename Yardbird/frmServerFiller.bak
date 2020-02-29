@@ -1,0 +1,85 @@
+﻿Imports System.Net
+Imports System.Net.Sockets
+Imports System.IO
+Public Class frmServerFiller
+    Dim testConns(256) As TcpClient
+    Dim comboSource As New Dictionary(Of Integer, String)
+    Private Sub frmServerFiller_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        For i = 1 To 256
+            comboSource.Add(i, i)
+        Next
+        cbxConns.DataSource = New BindingSource(comboSource, Nothing)
+        cbxConns.DisplayMember = "Value"
+        cbxConns.ValueMember = "Key"
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Function RandHand()
+        Randomize()
+        Dim tempHndl As String = ""
+        For i = 1 To 10
+            Dim tmpletter As String = Chr(97 + CInt(Rnd(25) * 25))
+            tempHndl = tempHndl & tmpletter
+        Next
+        Return tempHndl
+    End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        For i = 1 To CInt(cbxConns.SelectedValue)
+            Dim tempHndl = RandHand()
+            ListBox1.Items.Add(i & " attempting...")
+            testConns(i) = New TcpClient
+            Try
+                testConns(i).Connect("127.0.0.1", 49620)
+            Catch ex As Exception
+                MsgBox("Connection " & i & "failed to connect. Aborting. " & Hex(ex.HResult))
+                Exit For
+            End Try
+            Sleep(75)
+            If FillWrite(testConns(i), "CLID/") = False Then
+                MsgBox("Connection " & i & "failed to write CLID. Aborting.")
+                Exit For
+            Else
+            End If
+            If FillWrite(testConns(i), "HELO/" & tempHndl) = False Then
+                MsgBox("Connection " & i & "failed to write HELO. Aborting.")
+                Exit For
+            Else
+            End If
+            ListBox1.Items.Add(i & " success with handle " & tempHndl)
+        Next
+    End Sub
+
+    Function FillWrite(tc As TcpClient, data As String)
+        Try
+            Dim bytes = System.Text.Encoding.UTF8.GetBytes(data & vbCrLf)
+            tc.GetStream.Write(bytes, 0, bytes.Length)
+            Return True
+        Catch ex As Exception
+            MsgBox(Hex(ex.HResult))
+            Return False
+        End Try
+    End Function
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        For i = 1 To testConns.Length - 1
+            If Not IsNothing(testConns(i)) Then
+                If FillWrite(testConns(i), "QUIT/Server filler debugger " & i & " disconnecting.") = False Then
+                    MsgBox("Connection " & i & " failed to write QUIT. Force disconnecting all clients.")
+                    Exit For
+                End If
+                If FillWrite(testConns(i), "GDBY/") = False Then
+                    MsgBox("Connection " & i & " failed to write GDBY. Force disconnecting all clients.")
+                    Exit For
+                End If
+            End If
+            Sleep(75)
+        Next
+        For i = 1 To testConns.Length - 1
+            testConns(i) = Nothing
+        Next
+    End Sub
+End Class

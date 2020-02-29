@@ -1,0 +1,91 @@
+body {
+background-color: #fff;
+font-family: "Consolas", "Lucida Console", "Courier New", monospace;
+margin: 0px;
+border-top: 1px solid #aaa;
+}
+
+span.messageblock {
+	display: inline-block;
+	font-size: 9pt;
+	max-width: 100%;
+	color: #000;
+	margin: 5px 5px 5px 10px;
+}
+
+p.chatElement {
+	word-break: break-word;
+	word-wrap: break-word;
+	max-width: 100%;
+	display:block;
+	border-bottom: 1px solid #aaa;
+    margin: 5px 0px 0px 0px;
+}
+
+
+p.sent span.messageblock {
+		color: #400;
+}
+
+p.sent span.messageblock a{
+		color: blue;
+}
+
+p.sent span.messageblock a:hover{
+		color: #eef;
+}
+
+p.sent span.messageblock a:visited{
+		color: #aaf;
+}
+
+
+p.sent {
+
+}
+
+
+p.passive span.messageblock{
+	font-style: oblique;
+	font-weight: bold;
+	color: #555;
+}
+
+p.information span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	color: green;
+}
+
+p.critical span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	color: red;
+}
+
+p.warning span.messageblock{
+	font-weight: bold;
+	font-style: oblique;
+	color: brown;
+}
+
+span.handle {
+	font-weight: bold;
+	color: maroon;
+}
+
+p.sent span.handle {
+	font-weight: bold;
+	color: red;
+}
+
+a.disabledlink {
+	color: gray;
+ 	text-decoration: line-through underline;
+}
+
+a#bottom{
+	height: 10px;
+	max-width: 100%;
+}
+

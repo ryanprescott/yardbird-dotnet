@@ -1,0 +1,98 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Yardbird
+</name>
+</assembly>
+<members>
+<member name="T:Yardbird.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.action_Cancel_16xMD">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.am">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.Bold_11689_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.CheckMark_6909_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.config">
+<summary>
+  Looks up a localized string similar to [YBServer]
+# Changes will not take effect until you restart the server.
+
+[General]
+# General server settings. Feel free to change these. For the MOTD, refer to the formatting guide in the documentation.
+Name=My Yardbird Server
+Description=Just another Yardbird server.
+MOTD=\n@4[$fC[Welcome to %n]]\nIt is @b[%d %t]. There are $fC[@b[%a]] users online.
+
+[Listener]
+# Listener Settings
+#
+# These settings determine which IP and port the server listens on. For most folks, the default settings are fine [rest of string was truncated]&quot;;.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.FontColor_11146_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.FontDialogControl_679_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.FontSize_5701_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.Italic_11693_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.RasterNum3">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.Underline_11700_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Yardbird.My.Resources.Resources.yardbird32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+</members>
+</doc>
